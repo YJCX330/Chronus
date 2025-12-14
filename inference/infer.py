@@ -41,7 +41,6 @@ tokenizer, model, image_processor, _ = load_pretrained_model(model_path, None)
 model = model.to('cuda').eval()
 model = model.bfloat16()
 
-cur_dir = os.path.dirname(os.path.abspath(__file__))
 
 def load_audio(audio_file_name):
     speech_wav, samplerate = librosa.load(audio_file_name, sr=16000)

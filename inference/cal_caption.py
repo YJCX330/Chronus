@@ -36,8 +36,8 @@ def caption_metrics(data_gen, data_ref):
 
 
 if __name__ == "__main__":
-    data_gen=json.load(open("./results/chronus_a2v_open.json","r"))
-    data_ref=json.load(open("./data/test/a2v_openqa.json","r"))
+    data_gen=json.load(open("./results/chronus_v2a_open.json","r"))
+    data_ref=json.load(open("./data/test/v2a_openqa.json","r"))
     assert len(data_gen)==len(data_ref)
     eval_dict = caption_metrics(data_gen, data_ref)
     for k, v in eval_dict.items():

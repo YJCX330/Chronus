@@ -21,8 +21,8 @@ def calculate_iou(interval1, interval2):
 
 
 ##chronus
-results_path="./results/chronus_a2t_open.json"
-with open('./data/test/a2t_openqa.json', 'r') as file:
+results_path="./results/chronus_v2t_open.json"
+with open('./data/test/v2t_openqa.json', 'r') as file:
     data_ref = json.load(file)
 
 with open(results_path, 'r') as file:
