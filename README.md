@@ -8,8 +8,13 @@ ChronusOmni: Improving Time Awareness of Omni Large Language Models
 - [ ] Release dataset pipeline code
 
 ## ChronusAV Dataset
+Download annotation files: [ChronusAV](https://huggingface.co/datasets/mxxxxxxxxxxxxxxxxx/ChronusAV)
+Videos are selected from [Panda-70M](https://github.com/snap-research/Panda-70M)
+Videos_url: https://www.youtube.com/watch?v={video_id}
 
-## Installation
+## ChronusOmni
+
+### Installation
 ```bash
 conda create -n chronusomni python=3.10 -y
 conda activate chronusomni
@@ -19,14 +24,15 @@ pip install -r requirements.txt
 pip install flash_attn-2.6.0+cu118torch2.3cxx11abiFALSE-cp310-cp310-linux_x86_64.whl
 ```
 
-## Evaluation
+### Evaluation
 Download [chronusomni checkpoint](https://huggingface.co/mxxxxxxxxxxxxxxxxx/ChronusOmni)
 ```bash
 cd Chronus
 export PYTHONPATH=./
 python3 inference/eval.py --json_file ./data/test/v2a_openqa.json --results_path ./results/chronus_v2a_open.json
 ```
-## Training
+
+### Training
 Download [Ola checkpoint](https://huggingface.co/THUdyh/Ola-7b) to initialize
 
 SFT: 
