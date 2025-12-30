@@ -9,7 +9,9 @@ ChronusOmni: Improving Time Awareness of Omni Large Language Models
 
 ## ChronusAV Dataset
 Download annotation files: [ChronusAV](https://huggingface.co/datasets/mxxxxxxxxxxxxxxxxx/ChronusAV)
+
 Videos are selected from [Panda-70M](https://github.com/snap-research/Panda-70M)
+
 Videos_url: https://www.youtube.com/watch?v={video_id}
 
 ## ChronusOmni
