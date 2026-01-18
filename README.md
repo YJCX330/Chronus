@@ -33,7 +33,18 @@ cd Chronus
 export PYTHONPATH=./
 python3 inference/eval.py --json_file ./data/test/v2a_openqa.json --results_path ./results/chronus_v2a_open.json
 ```
-
+Evaluation data format:
+```bash
+[
+  {
+    "id": id,
+    "video": video_path,
+    "audio": audio_path,
+    "question": question
+  },
+  ...
+] 
+```
 ### Training
 Download [Ola checkpoint](https://huggingface.co/THUdyh/Ola-7b) to initialize
 
@@ -43,12 +54,59 @@ cd Chronus
 export PYTHONPATH=./
 bash ./scripts/finetune_ola.sh
 ```
+
+SFT training data format:
+```bash
+[
+    {
+        "id": id,
+        "video": video_path,
+        "audio": audio_path,
+        "conversations": [
+            {
+                "from": "human",
+                "value": f"<speech><image>\n{user_query}"
+            },
+            {
+                "from": "gpt",
+                "value": ground_truth_answer
+            }
+        ],
+    },
+    ...
+]
+```
+
 GRPO:
 ```bash
 cd Chronus
 export PYTHONPATH=./
 bash ./scripts/train_grpo.sh
 ```
+GRPO training data format:
+```bash
+[
+    {
+        "id": id,
+        "data_type": data_type, # data_type is one of: "t2a", "a2t", "t2v", "v2t", "a2v", "v2a"
+        "video": video_path,
+        "audio": audio_path,
+        "conversations": [
+            {
+                "from": "human",
+                "value": f"<speech><image>\n{user_query}"
+            },
+            {
+                "from": "gpt",
+                "value": ground_truth_answer
+            }
+        ],
+    },
+    ...
+]
+```
+Our training json file can be found at [training json file](https://huggingface.co/datasets/mxxxxxxxxxxxxxxxxx/ChronusOmni_training_json_file)
+
 ## Citation
 If you find it useful for your research and applications, please cite our paper using this BibTeX:
 ```bibtex
