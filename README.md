@@ -2,9 +2,9 @@
 ChronusOmni: Improving Time Awareness of Omni Large Language Models
 
 ## TODO
-- [ ] Release model code
-- [ ] Release checkpoint
-- [ ] Release dataset
+- [x] Release model code
+- [x] Release checkpoint
+- [x] Release dataset
 - [ ] Release dataset pipeline code
 
 ## ChronusAV Dataset
